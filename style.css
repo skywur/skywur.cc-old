@@ -6,7 +6,6 @@
 
 
 
-
 :root {
 }
 body {
@@ -69,6 +68,18 @@ input:focus {
 @keyframes growin {
 	0% {transform: scale(0%, 0%);}
 	100% {transform: scale(100%, 100%);}
+}
+@keyframes discordglow {
+	0% { }
+	100% {text-shadow: 0 0 5px rgb(88, 101, 242, 0.2), 0 0 10px rgb(88, 101, 242, 0.2), 0 0 25px rgb(88, 101, 242, 0.2);}
+}
+@keyframes twitterglow {
+	0% { }
+	100% {text-shadow: 0 0 5px rgb(29, 161, 242, 0.2), 0 0 10px rgb(29, 161, 242, 0.2), 0 0 25px rgb(29, 161, 242, 0.2);}
+}
+@keyframes steamglow {
+	0% { }
+	100% {text-shadow: 0 0 5px rgb(141, 8, 255, 0.2), 0 0 10px rgb(141, 8, 255, 0.2), 0 0 25px rgb(141, 8, 255, 0.2);}
 }
 
 body {
@@ -144,9 +155,9 @@ width: 20%;
 	position: absolute;
 	top: 17%;
 	left: 1%;
-	padding: 5px;
-	padding-right: 10px;
-	padding-left: 10px;
+	padding: .3vw;
+	padding-right: .6vw;
+	padding-left: .6vw;
 
 	color:white;
 	text-shadow: 1px 1px 1px rgba(0,0,0,0.6);
@@ -197,6 +208,20 @@ a {
 }
 #discord:hover {
 	background-size: 75% auto;
+	animation: discordglow 0.3s ease-in-out forwards;
+}
+#discord2 {
+	background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #5865F2 100%);
+	background-size: 400% auto;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: 0.3s;
+}
+#discord2:hover {
+	background-size: 100% auto;
+	animation: discordglow 0.3s ease-in-out forwards;
 }
 #twitter {
 	background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #1DA1F2 100%);
@@ -210,6 +235,7 @@ a {
 }
 #twitter:hover {
 	background-size: 80% auto;
+	animation: twitterglow 0.3s ease-in-out forwards;
 }
 #steam {
 	background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #8d08ff 100%);
@@ -222,12 +248,16 @@ a {
 }
 #steam:hover {
 background-size: 100% auto;
+animation: steamglow 0.3s ease-in-out forwards;
 }
 
 #steam:hover > #steamsvg {
 	fill: #8d08ff;
 }
 #discord:hover > #discordsvg {
+	fill: #5865F2;
+}
+#discord2:hover > #discord2svg {
 	fill: #5865F2;
 }
 #twitter:hover > #twittersvg {
@@ -249,6 +279,7 @@ svg {
 }
 
 canvas {
+	width: 100%;
 	left: 20%;
 	position: absolute;
 }
