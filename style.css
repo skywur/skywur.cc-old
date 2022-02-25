@@ -81,6 +81,10 @@ input:focus {
 	0% { }
 	100% {text-shadow: 0 0 5px rgb(141, 8, 255, 0.2), 0 0 10px rgb(141, 8, 255, 0.2), 0 0 25px rgb(141, 8, 255, 0.2);}
 }
+@keyframes onlyfansglow {
+	0% { }
+	100% {text-shadow: 0 0 5px rgb(0, 175, 240, 0.2), 0 0 10px rgb(0, 175, 240, 0.2), 0 0 25px rgb(0, 175, 240, 0.2);}
+}
 
 body {
   overflow: hidden; /* Hide scrollbars */
@@ -250,6 +254,19 @@ a {
 background-size: 100% auto;
 animation: steamglow 0.3s ease-in-out forwards;
 }
+#onlyfans {
+	background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #00AFF0 100%);
+	background-size: 400% auto;
+	background-clip: text;
+	text-fill-color: transparent;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: 0.3s;
+}
+#onlyfans:hover {
+background-size: 75% auto;
+animation: onlyfansglow 0.3s ease-in-out forwards;
+}
 
 #steam:hover > #steamsvg {
 	fill: #8d08ff;
@@ -263,6 +280,9 @@ animation: steamglow 0.3s ease-in-out forwards;
 #twitter:hover > #twittersvg {
 	fill: #1DA1F2;
 }
+#onlyfans:hover > #onlyfanssvg {
+	fill: #00AFF0;
+}
 
 @keyframes svguwu {
 	0% { left: 60%; opacity: 0; transform: rotateZ(340deg);}
@@ -272,8 +292,8 @@ animation: steamglow 0.3s ease-in-out forwards;
 svg {
 	position: absolute;
 	left: -15%;
-	height: 18%;
-	width: 18%;
+	height: 15%;
+	width: 15%;
 	fill: rgb(99, 99, 99);
 	transition: 0.3s fill;
 }
@@ -282,4 +302,11 @@ canvas {
 	width: 100%;
 	left: 20%;
 	position: absolute;
+}
+
+#spotify-widget {
+	z-index: 4;
+	position: absolute;
+	left:0;
+	top:0
 }
