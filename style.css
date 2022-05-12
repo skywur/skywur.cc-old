@@ -398,13 +398,15 @@ canvas {
         font-size: 10vw;
     }
     #tagcontainer {
-        top: 15vw;
+        top: 17vw;
+        left: 4vw;
     }
     #tagcontainer>h3 {
-        font-size: 3vw;
-        padding: 3px;
-        padding-left: 4px;
-        padding-right: 4px;
+        font-size: 2.5vw;
+        padding-top: 1px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
     }
     .desc {
         top: 25vw;
