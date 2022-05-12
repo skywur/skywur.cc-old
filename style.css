@@ -392,3 +392,29 @@ canvas {
     background-color: white;
     z-index: 4;
 }
+
+@media screen and (max-width: 800px) {
+    .logo {
+        font-size: 10vw;
+    }
+    #tagcontainer {
+        top: 15vw;
+    }
+    #tagcontainer>h3 {
+        font-size: 3vw;
+        padding: 3px;
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .desc {
+        top: 25vw;
+        font-size: 5vw;
+        left: 8vw;
+    }
+    .devtext {
+        font-size: 3vw;
+    }
+    canvas {
+        transform: scale(50%);
+    }
+}
