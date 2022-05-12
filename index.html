@@ -1,160 +1,179 @@
 <!doctype html>
 <html>
+
 <head>
-	<title>skywur</title>
-	<link rel="StyleSheet" href="style.css">
-	<link rel="icon" href="icon.png" type = "image/x-icon">
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>skywur</title>
+    <link rel="StyleSheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="gameindex.js"></script>
 
 </head>
+
 <body>
 
-	<div class="bg"></div>
+    <div class="bg"></div>
 
-	<div class="transsense"></div>
+    <div class="transsense"></div>
 
-	<h1 class="logo">&lt;skywur/&gt;</h1>
+    <h1 class="logo">&lt;skywur/&gt;</h1>
 
-	<div class="tags">
-		<h3 class="tag" id="tag1">she/her</h3> <h3 class="tag" id="tag2">web dev</h3> <h3 class="tag" id="tag3">actually stupid</h3> <h3 class="tag" id="tag4">gae</h3>
-	</div>
+    <div class="tags">
+        <h3 class="tag" id="tag1">she/her</h3>
+        <h3 class="tag" id="tag2">web dev</h3>
+        <h3 class="tag" id="tag3">actually stupid</h3>
+        <h3 class="tag" id="tag4">gae</h3>
+    </div>
 
-	<h2 class="desc">
-		<div id="discord">skywur#0002
-			<svg id="discordsvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-		</div>
-			<a href="https://discord.gg/3c5cnUNxkr"><div id="discord2">the skies
-			<svg id="discord2svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-		</div></a>
-		<a href="https://twitter.com/skywurrr"><div id="twitter">@skywurrr
-<svg id="twittersvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-		</div></a>
-		<a href="https://steamcommunity.com/id/cummyskylar/"><div id="steam">/id/cummyskylar
-<svg id="steamsvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
-		</div></a>
-		<a id="bait" href="https://onlyfans.com/kinkyskywur"><div id="onlyfans">OnlyFans :3
-<svg id="onlyfanssvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OnlyFans</title><path d="M12 0C5.373 0 0 5.373 0 12s5.372 12 12 12c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm-.012 1.256c5.942-.007 10.755 4.805 10.755 10.741S17.93 22.746 11.995 22.745c-5.936 0-10.749-4.812-10.749-10.748 0-5.927 4.799-10.735 10.742-10.741zm-.32 4.567a4.496 4.496 0 0 0-3.164 1.299 4.338 4.338 0 0 0-1.317 3.117v.979l-.556 1.003v1.444a4.842 4.842 0 0 0 1.465 3.462 5.031 5.031 0 0 0 3.53 1.44h.896c1.316 0 2.58-.517 3.52-1.44a4.834 4.834 0 0 0 1.467-3.462V12.22l-.55-1.003v-.98a4.35 4.35 0 0 0-1.32-3.116 4.496 4.496 0 0 0-3.166-1.299zm0 1.97h.805a2.496 2.496 0 0 1 1.75.724c.465.452.728 1.073.73 1.722l.003 1.01h-5.77v-1.01c.002-.649.265-1.27.73-1.722a2.499 2.499 0 0 1 1.751-.725zm.464 5.196h.03c1.534-.023 1.95 2.104.519 2.66h-.086v1.156a.502.502 0 0 1-.232.426h-.511a.52.52 0 0 1-.24-.434V15.65c-1.43-.556-1.015-2.683.52-2.66Z"/></svg>
-		</div></a>
-	</h2>
-	<div id="spotify-widget"></div>
+    <h2 class="desc">
+        <div id="discord">skywur#7358
+            <svg id="discordsvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+        </div>
+        <a href="https://discord.gg/3c5cnUNxkr">
+            <div id="discord2">the skies
+                <svg id="discord2svg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
+            </div>
+        </a>
+        <a href="https://twitter.com/skywurrr">
+            <div id="twitter">@skywurrr
+                <svg id="twittersvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Twitter</title><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </div>
+        </a>
+        <a href="https://steamcommunity.com/id/cummyskylar/">
+            <div id="steam">/id/cummyskylar
+                <svg id="steamsvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.979 0C5.678 0 .511 4.86.022 11.037l6.432 2.658c.545-.371 1.203-.59 1.912-.59.063 0 .125.004.188.006l2.861-4.142V8.91c0-2.495 2.028-4.524 4.524-4.524 2.494 0 4.524 2.031 4.524 4.527s-2.03 4.525-4.524 4.525h-.105l-4.076 2.911c0 .052.004.105.004.159 0 1.875-1.515 3.396-3.39 3.396-1.635 0-3.016-1.173-3.331-2.727L.436 15.27C1.862 20.307 6.486 24 11.979 24c6.627 0 11.999-5.373 11.999-12S18.605 0 11.979 0zM7.54 18.21l-1.473-.61c.262.543.714.999 1.314 1.25 1.297.539 2.793-.076 3.332-1.375.263-.63.264-1.319.005-1.949s-.75-1.121-1.377-1.383c-.624-.26-1.29-.249-1.878-.03l1.523.63c.956.4 1.409 1.5 1.009 2.455-.397.957-1.497 1.41-2.454 1.012H7.54zm11.415-9.303c0-1.662-1.353-3.015-3.015-3.015-1.665 0-3.015 1.353-3.015 3.015 0 1.665 1.35 3.015 3.015 3.015 1.663 0 3.015-1.35 3.015-3.015zm-5.273-.005c0-1.252 1.013-2.266 2.265-2.266 1.249 0 2.266 1.014 2.266 2.266 0 1.251-1.017 2.265-2.266 2.265-1.253 0-2.265-1.014-2.265-2.265z"/></svg>
+            </div>
+        </a>
+        <a id="bait" href="https://onlyfans.com/kinkyskywur">
+            <div id="onlyfans">OnlyFans :3
+                <svg id="onlyfanssvg" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>OnlyFans</title><path d="M12 0C5.373 0 0 5.373 0 12s5.372 12 12 12c6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm-.012 1.256c5.942-.007 10.755 4.805 10.755 10.741S17.93 22.746 11.995 22.745c-5.936 0-10.749-4.812-10.749-10.748 0-5.927 4.799-10.735 10.742-10.741zm-.32 4.567a4.496 4.496 0 0 0-3.164 1.299 4.338 4.338 0 0 0-1.317 3.117v.979l-.556 1.003v1.444a4.842 4.842 0 0 0 1.465 3.462 5.031 5.031 0 0 0 3.53 1.44h.896c1.316 0 2.58-.517 3.52-1.44a4.834 4.834 0 0 0 1.467-3.462V12.22l-.55-1.003v-.98a4.35 4.35 0 0 0-1.32-3.116 4.496 4.496 0 0 0-3.166-1.299zm0 1.97h.805a2.496 2.496 0 0 1 1.75.724c.465.452.728 1.073.73 1.722l.003 1.01h-5.77v-1.01c.002-.649.265-1.27.73-1.722a2.499 2.499 0 0 1 1.751-.725zm.464 5.196h.03c1.534-.023 1.95 2.104.519 2.66h-.086v1.156a.502.502 0 0 1-.232.426h-.511a.52.52 0 0 1-.24-.434V15.65c-1.43-.556-1.015-2.683.52-2.66Z"/></svg>
+            </div>
+        </a>
+    </h2>
 
-	<script>
-	function redirect() {
-		window.location.href = "downbad.html";
-	}
+    <div id="spotify-widget"></div>
 
-	$(document).ready(function() {
-    $('#bait').click(function() {
-        redirect();
-        return false; // get baited LOL
-    });
-});
-	</script>
+    <script>
+        function redirect() {
+            window.location.href = "downbad.html";
+        }
 
-
-
-	<script>
-SCP({
-	selector: '#spotify-widget',
-	username: 'skywurowo',
-	api_key: '9b6c589c7709b4dfbd2592c75c398a77',
-	width: '100',
-	height: '370'
-});
-
-</script>
-
-<script src="spotifyCurrentlyPlaying.min.js"></script>
-
-
-<script class="test" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>
-<script>
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer();
-
-/*
- In addition to creating the renderer instance, we also need to set the size at which we want it to render our app.
- It's a good idea to use the width and height of the area we want to fill with our game
- - in this case, the width and height of the browser window. For performance intensive games, you can also give setSize smaller values,
- like window.innerWidth/2 and window.innerHeight/2, for half the resolution.
- This does not mean that the game will only fill half the window, but rather look a bit blurry and scaled up.
-
- Last but not least, we add the renderer element to our HTML document.
- This is a <canvas> element the renderer uses to display the scene to us.
-*/
-
-renderer.setSize(window.innerWidth, window.innerHeight);
-document.body.appendChild(renderer.domElement);
+        $(document).ready(function() {
+            $('#bait').click(function() {
+                redirect();
+                return false; // get baited LOL
+            });
+        });
+    </script>
 
 
 
-/* Create Lights: PointLight / SpotLight etc.*/
-var spotLight = new THREE.SpotLight(0xffffff);
-spotLight.position.set(100,100,100);
-spotLight.castShadow = true; //If set to true light will cast dynamic shadows. Warning: This is expensive and requires tweaking to get shadows looking right.
-spotLight.shadowMapWidth = 1024;
-spotLight.shadowMapHeight = 1024;
-spotLight.shadowCameraNear = 500;
-spotLight.shadowCameraFar = 4000;
-spotLight.shadowCameraFov = 30;
-scene.add(spotLight);
+    <script>
+        SCP({
+            selector: '#spotify-widget',
+            username: 'skywurowo',
+            api_key: '9b6c589c7709b4dfbd2592c75c398a77',
+            width: '100',
+            height: '370'
+        });
+    </script>
 
-/* Create Material */
-function Mat(){
-  var material = new THREE.MeshPhongMaterial({
-    color      : new THREE.Color("rgb(70, 0, 88)"),  //Diffuse color of the material
-    emissive   : new THREE.Color("rgb(165, 64, 255)"), //Emissive(light) color of the material, essentially a solid color unaffected by other lighting. Default is black.
-    specular   : new THREE.Color("rgb(255, 161, 0)"), /*Specular color of the material, i.e., how shiny the material is and the color of its shine.
-                                                       Setting this the same color as the diffuse value (times some intensity) makes the material more metallic-looking;
-                                                       setting this to some gray makes the material look more plastic. Default is dark gray.*/
-    shininess  : 1,                                  //How shiny the specular highlight is; a higher value gives a sharper highlight. Default is 30.
-    shading    : THREE.SmoothtShading,                  //How the triangles of a curved surface are rendered: THREE.SmoothShading, THREE.FlatShading, THREE.NoShading
-    wireframe  : 1,                                  //THREE.Math.randInt(0,1)
-    transparent: 1,
-    opacity    : 0.15                                //THREE.Math.randFloat(0,1)
-  });
-  return material;
-}
+    <script src="spotifyCurrentlyPlaying.min.js"></script>
 
-/* Create Geometry */
-var geometry = new THREE.SphereGeometry(50,20,20,0,Math.PI*2,0,Math.PI);
-//SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength)
 
-/* Create Earth Sphere*/
-var earth = new THREE.Mesh(geometry, Mat());
+    <script class="test" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r61/three.min.js"></script>
+    <script>
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
+        var renderer = new THREE.WebGLRenderer();
 
-/*
-var numSphere = 30;
-var tabSphere = [];
-for(var i=0: i<numSphere; i++){
-  tabShpere.push(new Sphere(i));
-  scene.add(tabSphere[i].b);
-}
-*/
+        /*
+         In addition to creating the renderer instance, we also need to set the size at which we want it to render our app.
+         It's a good idea to use the width and height of the area we want to fill with our game
+         - in this case, the width and height of the browser window. For performance intensive games, you can also give setSize smaller values,
+         like window.innerWidth/2 and window.innerHeight/2, for half the resolution.
+         This does not mean that the game will only fill half the window, but rather look a bit blurry and scaled up.
 
-scene.add(earth);
+         Last but not least, we add the renderer element to our HTML document.
+         This is a <canvas> element the renderer uses to display the scene to us.
+        */
 
-camera.position.z = 90;
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
 
 
-/*
-  This will create a loop that causes the renderer to draw the scene 60 times per second.
-  If you're new to writing games in the browser, you might say "why don't we just create a setInterval?
-  The thing is - we could, but requestAnimationFrame has a number of advantages.
-  Perhaps the most important one is that it pauses when the user navigates to another browser tab, hence not wasting their precious processing power and battery life.
-*/
-function render(){
-  requestAnimationFrame(render);
-  earth.rotation.x += 0.005;
-  earth.rotation.y += 0.005;
-  renderer.render(scene, camera);
-}
-render();
+        /* Create Lights: PointLight / SpotLight etc.*/
+        var spotLight = new THREE.SpotLight(0xffffff);
+        spotLight.position.set(100, 100, 100);
+        spotLight.castShadow = true; //If set to true light will cast dynamic shadows. Warning: This is expensive and requires tweaking to get shadows looking right.
+        spotLight.shadowMapWidth = 1024;
+        spotLight.shadowMapHeight = 1024;
+        spotLight.shadowCameraNear = 500;
+        spotLight.shadowCameraFar = 4000;
+        spotLight.shadowCameraFov = 30;
+        scene.add(spotLight);
 
-</script>
+        /* Create Material */
+        function Mat() {
+            var material = new THREE.MeshPhongMaterial({
+                color: new THREE.Color("rgb(70, 0, 88)"), //Diffuse color of the material
+                emissive: new THREE.Color("rgb(165, 64, 255)"), //Emissive(light) color of the material, essentially a solid color unaffected by other lighting. Default is black.
+                specular: new THREE.Color("rgb(255, 161, 0)"),
+                /*Specular color of the material, i.e., how shiny the material is and the color of its shine.
+                                                                      Setting this the same color as the diffuse value (times some intensity) makes the material more metallic-looking;
+                                                                      setting this to some gray makes the material look more plastic. Default is dark gray.*/
+                shininess: 1, //How shiny the specular highlight is; a higher value gives a sharper highlight. Default is 30.
+                shading: THREE.SmoothtShading, //How the triangles of a curved surface are rendered: THREE.SmoothShading, THREE.FlatShading, THREE.NoShading
+                wireframe: 1, //THREE.Math.randInt(0,1)
+                transparent: 1,
+                opacity: 0.15 //THREE.Math.randFloat(0,1)
+            });
+            return material;
+        }
 
-<div class="devtext">site in development</div>
+        /* Create Geometry */
+        var geometry = new THREE.SphereGeometry(50, 20, 20, 0, Math.PI * 2, 0, Math.PI);
+        //SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength)
+
+        /* Create Earth Sphere*/
+        var earth = new THREE.Mesh(geometry, Mat());
+
+        /*
+        var numSphere = 30;
+        var tabSphere = [];
+        for(var i=0: i<numSphere; i++){
+          tabShpere.push(new Sphere(i));
+          scene.add(tabSphere[i].b);
+        }
+        */
+
+        scene.add(earth);
+
+        camera.position.z = 90;
+
+
+
+        /*
+          This will create a loop that causes the renderer to draw the scene 60 times per second.
+          If you're new to writing games in the browser, you might say "why don't we just create a setInterval?
+          The thing is - we could, but requestAnimationFrame has a number of advantages.
+          Perhaps the most important one is that it pauses when the user navigates to another browser tab, hence not wasting their precious processing power and battery life.
+        */
+        function render() {
+            requestAnimationFrame(render);
+            earth.rotation.x += 0.005;
+            earth.rotation.y += 0.005;
+            renderer.render(scene, camera);
+        }
+        render();
+    </script>
+
+    <div id="steamcard">
+
+    </div>
+
+    <div class="devtext">site in development</div>
 </body>
+
 </html>
