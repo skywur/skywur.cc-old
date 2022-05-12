@@ -34,11 +34,18 @@ body {
 
 .devtext {
     position: absolute;
-    bottom: 3%;
+    bottom: 2vw;
     left: 3%;
     font-size: 1vw;
     color: gray;
     font-family: 'Readex Pro', sans-serif;
+}
+
+.devtext>a {
+    color: rgb(170, 170, 170);
+    font-weight: bolder;
+    text-decoration: underline;
+    text-decoration-thickness: 0.05em;
 }
 
 .transsense {
@@ -117,10 +124,10 @@ input:focus {
     }
 }
 
-@keyframes onlyfansglow {
+@keyframes prnsglow {
     0% {}
     100% {
-        text-shadow: 0 0 5px rgb(0, 175, 240, 0.2), 0 0 10px rgb(0, 175, 240, 0.2), 0 0 25px rgb(0, 175, 240, 0.2);
+        text-shadow: 0 0 5px rgb(227, 111, 250, 0.2), 0 0 10px rgb(227, 111, 250, 0.2), 0 0 25px rgb(227, 111, 250, 0.2);
     }
 }
 
@@ -193,61 +200,49 @@ body {
     font-family: 'Readex Pro', sans-serif;
     font-size: 5vw;
     background: linear-gradient(45deg, rgb(141, 8, 255), rgb(255, 161, 0));
-    padding: 1vw;
+    padding: 2vw;
     margin: 0%;
     position: absolute;
-    top: 5%;
+    top: 1.5vw;
+    left: -1vw;
     white-space: nowrap;
-    animation: load-fade-in 5s forwards;
     filter: drop-shadow(0.2vw 0.2vw rgba(0, 0, 0, 0.5));
     text-align: left;
     background-clip: text;
     text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: 0.3s letter-spacing;
+    cursor: default;
 }
 
-.tags {
-    width: 20%;
-    animation: load-fade-in 8s forwards;
+#tagcontainer {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0%;
+    position: absolute;
+    top: 10vw;
+    left: 2vw;
 }
 
-.tag {
+#tagcontainer>h3 {
     font-family: 'Readex Pro', sans-serif;
     font-size: 1vw;
-    position: absolute;
-    top: 17%;
-    left: 1%;
     padding: .3vw;
     padding-right: .6vw;
     padding-left: .6vw;
+    margin: 0.2vw;
     color: white;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
     border-radius: 30px;
     background: linear-gradient(45deg, rgb(74, 0, 126), rgb(189, 0, 255))
 }
 
-#tag1 {
-    left: 2%;
-}
-
-#tag2 {
-    left: 8%;
-}
-
-#tag3 {
-    left: 14.5%;
-}
-
-#tag4 {
-    left: 24%;
-}
-
 .desc {
     font-family: 'Readex Pro', sans-serif;
     font-size: 2.5vw;
     position: absolute;
-    top: 20%;
+    top: 12vw;
     padding: 2vw;
     margin: 1vw;
     transition: 0.3s;
@@ -319,8 +314,8 @@ a {
     animation: steamglow 0.3s ease-in-out forwards;
 }
 
-#onlyfans {
-    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #00AFF0 100%);
+#prns {
+    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #e36ffa 100%);
     background-size: 400% auto;
     background-clip: text;
     text-fill-color: transparent;
@@ -329,9 +324,9 @@ a {
     transition: 0.3s;
 }
 
-#onlyfans:hover {
-    background-size: 75% auto;
-    animation: onlyfansglow 0.3s ease-in-out forwards;
+#prns:hover {
+    background-size: 100% auto;
+    animation: prnsglow 0.3s ease-in-out forwards;
 }
 
 #steam:hover>#steamsvg {
@@ -350,8 +345,8 @@ a {
     fill: #1DA1F2;
 }
 
-#onlyfans:hover>#onlyfanssvg {
-    fill: #00AFF0;
+#prns:hover>#prnssvg {
+    fill: #e36ffa;
 }
 
 @keyframes svguwu {
