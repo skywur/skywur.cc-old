@@ -265,21 +265,6 @@ a {
 }
 
 #discord:hover {
-    background-size: 75% auto;
-    animation: discordglow 0.3s ease-in-out forwards;
-}
-
-#discord2 {
-    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #5865F2 100%);
-    background-size: 400% auto;
-    background-clip: text;
-    text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: 0.3s;
-}
-
-#discord2:hover {
     background-size: 100% auto;
     animation: discordglow 0.3s ease-in-out forwards;
 }
@@ -334,10 +319,6 @@ a {
 }
 
 #discord:hover>#discordsvg {
-    fill: #5865F2;
-}
-
-#discord2:hover>#discord2svg {
     fill: #5865F2;
 }
 
