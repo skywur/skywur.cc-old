@@ -367,6 +367,10 @@ canvas {
     position: absolute;
 }
 
+canvas:nth-of-type(2) {
+    left: 10%;
+}
+
 #spotify-widget {
     z-index: 4;
     position: absolute;
