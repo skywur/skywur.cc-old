@@ -83,7 +83,7 @@ var pMaterial = new THREE.PointCloudMaterial({
 // Custom (OGJ) Objects
 // home
 var objLoader = new THREE.OBJLoader();
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/threejsFINAL.obj?v=1663212276075', function(object) {
+objLoader.load('threejsFINAL.obj', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -99,7 +99,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/t
     });
 });
 // discord
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/discordFINAL.obj?v=1663215088026', function(object) {
+objLoader.load('discordFINAL.obj', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -115,7 +115,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/d
     });
 });
 // twitter
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/twitterFINAL.obj?v=1663209948782', function(object) {
+objLoader.load('twitterFINAL.obj', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -131,7 +131,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/t
     });
 });
 // steam
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/steamFINAL.obj?v=1663215362951', function(object) {
+objLoader.load('steamFINAL.obj', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -147,7 +147,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/s
     });
 });
 // pronouns
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/pronounsFINAL.obj?v=1663215905323', function(object) {
+objLoader.load('pronounsFINAL.obj', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
