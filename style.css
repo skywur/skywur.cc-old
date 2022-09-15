@@ -41,6 +41,25 @@ body {
     font-family: 'Readex Pro', sans-serif;
 }
 
+#quotes {
+    display: inline-block;
+}
+
+#quotesouter {
+    position: absolute;
+    bottom: 2vw;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1vw;
+    color: rgb(68, 68, 68);
+    font-family: 'Readex Pro', sans-serif;
+}
+
+#quotesouter>p {
+    display: inline-block;
+}
+
 #closerTag {
     position: absolute;
     bottom: 2vw;
@@ -137,6 +156,13 @@ input:focus {
     0% {}
     100% {
         text-shadow: 0 0 5px rgb(227, 111, 250, 0.2), 0 0 10px rgb(227, 111, 250, 0.2), 0 0 25px rgb(227, 111, 250, 0.2);
+    }
+}
+
+@keyframes mailglow {
+    0% {}
+    100% {
+        text-shadow: 0 0 5px rgb(234, 67, 53, 0.2), 0 0 10px rgb(234, 67, 53, 0.2), 0 0 25px rgb(234, 67, 53, 0.2);
     }
 }
 
@@ -339,6 +365,23 @@ a {
     animation: prnsglow 0.3s ease-in-out forwards;
 }
 
+#mail {
+    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #EA4335 100%);
+    background-size: 400% auto;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+    font-size: 2vw;
+    padding-top: .3vw;
+}
+
+#mail:hover {
+    background-size: 100% auto;
+    animation: mailglow 0.3s ease-in-out forwards;
+}
+
 #steam:hover>#steamsvg {
     fill: #8d08ff;
 }
@@ -353,6 +396,10 @@ a {
 
 #prns:hover>#prnssvg {
     fill: #e36ffa;
+}
+
+#mail:hover>#mailsvg {
+    fill: #EA4335;
 }
 
 @keyframes svguwu {
