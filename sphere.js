@@ -83,7 +83,7 @@ var pMaterial = new THREE.PointCloudMaterial({
 // Custom (OGJ) Objects
 // home
 var objLoader = new THREE.OBJLoader();
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/threejsFINAL.obj?v=1663212276075', function(object) {
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/mainFINAL.obj?v=1663222069867', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
