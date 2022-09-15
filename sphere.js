@@ -1,84 +1,291 @@
-var scene = new THREE.Scene();
-var camera = new THREE.PerspectiveCamera(100, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new THREE.WebGLRenderer();
+const numberOfParticles = 10000
 
-/*
- In addition to creating the renderer instance, we also need to set the size at which we want it to render our app.
- It's a good idea to use the width and height of the area we want to fill with our game
- - in this case, the width and height of the browser window. For performance intensive games, you can also give setSize smaller values,
- like window.innerWidth/2 and window.innerHeight/2, for half the resolution.
- This does not mean that the game will only fill half the window, but rather look a bit blurry and scaled up.
+// Options
 
- Last but not least, we add the renderer element to our HTML document.
- This is a <canvas> element the renderer uses to display the scene to us.
-*/
+const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/particle-tiny.png',
+    particleColor = '0xFFFFFF',
+    particleSize = .1;
 
+const defaultAnimationSpeed = 1,
+    morphAnimationSpeed = 1;
+
+// Triggers
+const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
+const home = document.getElementsByClassName('logo')
+
+// Renderer
+const canvas = document.querySelector('#canvas')
+var renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
+renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
+// Ensure Full Screen on Resize
+function fullScreen() {
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
 
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
-/* Create Lights: PointLight / SpotLight etc.*/
-var spotLight = new THREE.SpotLight(0xffffff);
-spotLight.position.set(100, 100, 100);
-spotLight.castShadow = true; //If set to true light will cast dynamic shadows. Warning: This is expensive and requires tweaking to get shadows looking right.
-spotLight.shadowMapWidth = 1024;
-spotLight.shadowMapHeight = 1024;
-spotLight.shadowCameraNear = 500;
-spotLight.shadowCameraFar = 4000;
-spotLight.shadowCameraFov = 30;
-scene.add(spotLight);
+window.addEventListener('resize', fullScreen, false)
 
-/* Create Material */
-function Mat() {
-    var material = new THREE.MeshPhongMaterial({
-        color: new THREE.Color("rgb(70, 0, 88)"), //Diffuse color of the material
-        emissive: new THREE.Color("rgb(165, 64, 255)"), //Emissive(light) color of the material, essentially a solid color unaffected by other lighting. Default is black.
-        specular: new THREE.Color("rgb(255, 161, 0)"),
-        /*Specular color of the material, i.e., how shiny the material is and the color of its shine.
-                                                              Setting this the same color as the diffuse value (times some intensity) makes the material more metallic-looking;
-                                                              setting this to some gray makes the material look more plastic. Default is dark gray.*/
-        shininess: 1, //How shiny the specular highlight is; a higher value gives a sharper highlight. Default is 30.
-        shading: THREE.SmoothtShading, //How the triangles of a curved surface are rendered: THREE.SmoothShading, THREE.FlatShading, THREE.NoShading
-        wireframe: 1, //THREE.Math.randInt(0,1)
-        transparent: 1,
-        opacity: 0.15 //THREE.Math.randFloat(0,1)
+// Scene
+var scene = new THREE.Scene();
+
+// Camera and position
+var camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+
+camera.position.y = 0;
+camera.position.z = 36;
+
+// controls
+let controls = new THREE.OrbitControls(camera);
+
+// to disable zoom
+controls.enableZoom = false;
+
+// to disable rotation
+controls.enableRotate = false;
+
+// to disable pan
+controls.enablePan = false;
+
+// Lighting
+var light = new THREE.AmbientLight(0x404040, 1); // soft white light
+scene.add(light);
+
+// Particle Vars
+var particleCount = numberOfParticles;
+
+let projectPoints,
+    homePoints,
+    discordPoints,
+    twitterPoints,
+    steamPoints,
+    pronounsPoints;
+
+var particles = new THREE.Geometry(),
+    homeParticles = new THREE.Geometry(),
+    discordParticles = new THREE.Geometry(),
+    twitterParticles = new THREE.Geometry(),
+    steamParticles = new THREE.Geometry(),
+    pronounsParticles = new THREE.Geometry();
+
+var pMaterial = new THREE.PointCloudMaterial({
+    color: particleColor,
+    size: particleSize,
+    map: THREE.ImageUtils.loadTexture(particleImage),
+    blending: THREE.AdditiveBlending,
+    transparent: true
+});
+
+// Custom (OGJ) Objects
+// home
+var objLoader = new THREE.OBJLoader();
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/threejsFINAL.obj?v=1663212276075', function(object) {
+    object.traverse(function(child) {
+        if (child instanceof THREE.Mesh) {
+            let scale = 2.5;
+
+            let area = new THREE.Box3();
+            area.setFromObject(child);
+            let yOffset = (area.max.y * scale) - 7;
+
+            child.geometry.scale(scale, scale, scale);
+            homePoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+            createVertices(homeParticles, homePoints, yOffset, 2);
+        }
     });
-    return material;
+});
+// discord
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/discordFINAL.obj?v=1663215088026', function(object) {
+    object.traverse(function(child) {
+        if (child instanceof THREE.Mesh) {
+            let scale = 2.5;
+
+            let area = new THREE.Box3();
+            area.setFromObject(child);
+            let yOffset = (area.max.y * scale) - 7;
+
+            child.geometry.scale(scale, scale, scale);
+            discordPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+            createVertices(discordParticles, discordPoints, yOffset, 0);
+        }
+    });
+});
+// twitter
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/twitterFINAL.obj?v=1663209948782', function(object) {
+    object.traverse(function(child) {
+        if (child instanceof THREE.Mesh) {
+            let scale = 2.5;
+
+            let area = new THREE.Box3();
+            area.setFromObject(child);
+            let yOffset = (area.max.y * scale) - 7;
+
+            child.geometry.scale(scale, scale, scale);
+            twitterPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+            createVertices(twitterParticles, twitterPoints, yOffset, 0);
+        }
+    });
+});
+// steam
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/steamFINAL.obj?v=1663215362951', function(object) {
+    object.traverse(function(child) {
+        if (child instanceof THREE.Mesh) {
+            let scale = 2.5;
+
+            let area = new THREE.Box3();
+            area.setFromObject(child);
+            let yOffset = (area.max.y * scale) - 8.5;
+
+            child.geometry.scale(scale, scale, scale);
+            steamPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+            createVertices(steamParticles, steamPoints, yOffset, 0);
+        }
+    });
+});
+// pronouns
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/pronounsFINAL.obj?v=1663215905323', function(object) {
+    object.traverse(function(child) {
+        if (child instanceof THREE.Mesh) {
+            let scale = 2.5;
+
+            let area = new THREE.Box3();
+            area.setFromObject(child);
+            let yOffset = (area.max.y * scale) - 7;
+
+            child.geometry.scale(scale, scale, scale);
+            pronounsPoints = THREE.GeometryUtils.randomPointsInBufferGeometry(child.geometry, particleCount);
+            createVertices(pronounsParticles, pronounsPoints, yOffset, 0);
+        }
+    });
+});
+
+// Particles
+for (var p = 0; p < particleCount; p++) {
+    var vertex = new THREE.Vector3();
+    vertex.x = 0;
+    vertex.y = 0;
+    vertex.z = 0;
+
+    particles.vertices.push(vertex);
 }
 
-/* Create Geometry */
-var geometry = new THREE.SphereGeometry(50, 20, 20, 0, Math.PI * 2, 0, Math.PI);
-//SphereGeometry(radius, widthSegments, heightSegments, phiStart, phiLength, thetaStart, thetaLength)
+function createVertices(emptyArray, points, yOffset = 0, trigger = null) {
+    for (var p = 0; p < particleCount; p++) {
+        var vertex = new THREE.Vector3();
+        vertex.x = points[p]['x'];
+        vertex.y = points[p]['y'] - yOffset;
+        vertex.z = points[p]['z'];
 
-/* Create Earth Sphere*/
-var earth = new THREE.Mesh(geometry, Mat());
-
-/*
-var numSphere = 30;
-var tabSphere = [];
-for(var i=0: i<numSphere; i++){
-  tabShpere.push(new Sphere(i));
-  scene.add(tabSphere[i].b);
+        emptyArray.vertices.push(vertex);
+    }
+    if (trigger !== null) {
+        triggers[trigger].setAttribute('data-disabled', false)
+    }
 }
-*/
 
-scene.add(earth);
+var particleSystem = new THREE.PointCloud(
+    particles,
+    pMaterial
+);
 
-camera.position.z = 90;
+particleSystem.sortParticles = true;
 
+// Add the particles to the scene
+scene.add(particleSystem);
 
+// Animate
+const normalSpeed = (defaultAnimationSpeed / 100),
+    fullSpeed = (morphAnimationSpeed / 100)
 
-/*
-  This will create a loop that causes the renderer to draw the scene 60 times per second.
-  If you're new to writing games in the browser, you might say "why don't we just create a setInterval?
-  The thing is - we could, but requestAnimationFrame has a number of advantages.
-  Perhaps the most important one is that it pauses when the user navigates to another browser tab, hence not wasting their precious processing power and battery life.
-*/
-function render() {
-    requestAnimationFrame(render);
-    earth.rotation.x += 0.005;
-    earth.rotation.y += 0.005;
+let animationVars = {
+    speed: normalSpeed
+}
+
+function animate() {
+    particleSystem.rotation.y += animationVars.speed;
+    particles.verticesNeedUpdate = true;
+
+    window.requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
-render();
+
+animate();
+setTimeout(toHome, 250);
+
+
+
+function toHome() {
+    morphTo(homeParticles, '0xffffff');
+}
+
+function todiscord() {
+    handleTriggers(0);
+    morphTo(discordParticles, '0x0A66C2');
+}
+
+function totwitter() {
+    handleTriggers(1);
+    morphTo(twitterParticles, '0x1DA1F2');
+}
+
+function tosteam() {
+    handleTriggers(2);
+    morphTo(steamParticles, '0xad3bff');
+}
+
+function topronouns() {
+    handleTriggers(3);
+    morphTo(pronounsParticles, '0xffb5fe');
+}
+
+
+
+
+function morphTo(newParticles, color) {
+    TweenMax.to(animationVars, .03, {
+        ease: Power2.easeIn,
+        speed: fullSpeed,
+        onComplete: slowDown
+    });
+    particleSystem.material.color.setHex(color);
+
+    for (var i = 0; i < particles.vertices.length; i++) {
+        TweenMax.to(particles.vertices[i], 5, {
+            ease: Elastic.easeOut.config(1, 0.95),
+            x: newParticles.vertices[i].x,
+            y: newParticles.vertices[i].y,
+            z: newParticles.vertices[i].z
+        })
+    }
+}
+
+function slowDown() {
+    TweenMax.to(animationVars, 2, {
+        ease: Power2.easeOut,
+        speed: normalSpeed,
+        delay: .1
+    });
+}
+
+home[0].addEventListener('mouseover', toHome)
+triggers[0].addEventListener('mouseover', todiscord)
+triggers[1].addEventListener('mouseover', totwitter)
+triggers[2].addEventListener('mouseover', tosteam)
+triggers[3].addEventListener('mouseover', topronouns)
+
+
+
+function handleTriggers(disable) {
+    for (var x = 0; x < triggers.length; x++) {
+        if (disable == x) {
+            triggers[x].setAttribute('data-disabled', true)
+
+        } else {
+            triggers[x].setAttribute('data-disabled', false)
+        }
+    }
+}
