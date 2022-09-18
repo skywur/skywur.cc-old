@@ -39,6 +39,7 @@ body {
     font-size: 1vw;
     color: gray;
     font-family: 'Readex Pro', sans-serif;
+    z-index: 5;
 }
 
 #quotes {

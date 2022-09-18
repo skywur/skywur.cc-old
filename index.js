@@ -353,10 +353,13 @@ function indefiniteWrite() {
         "check your shower",
         "i'm sleeping mad as hell tonight",
         "i @@mommy i'm",
-        "mf ruined my 7 months",
         "<t:1657194359:d>",
         "guess i like dick then",
-        ""
+        "Tannies are gross ⚞ᴥ⚟",
+        "RIP Plingo and Plongo",
+        "fnaf_scary.mp3",
+        "Ricardo Rodriguez",
+        "On Fundus?"
     ];
 
 
