@@ -344,6 +344,7 @@ function indefiniteWrite() {
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
         "0707",
+        "mf ruined my 7 month :sob:",
         "I'm your worst nightmare Khalid",
         "I'm Straight - Lil Baby",
         "group full of tranies",
@@ -380,3 +381,22 @@ function indefiniteWrite() {
         indefiniteWrite();
     }).start();
 }
+
+(function($) {
+
+    $(window).on('load', function() {
+        console.log("everything loaded");
+
+        const wrapper = document.getElementById("wrapper");
+        wrapper.style.opacity = "0";
+        wrapper.addEventListener('transitionend', () => wrapper.remove());
+
+    });
+
+    // and/or
+
+    $(document).ready(function() {
+        console.log("dom loaded");
+    });
+
+})(jQuery);
