@@ -349,18 +349,17 @@ function indefiniteWrite() {
         "I'm Straight - Lil Baby",
         "group full of tranies",
         "every tranny i've ever met in csgo was hacking",
-        "me praying for that she/her d1ck",
         "jibby: i like ass",
         "check your shower",
         "i'm sleeping mad as hell tonight",
         "i @@mommy i'm",
         "<t:1657194359:d>",
-        "guess i like dick then",
-        "Tannies are gross ⚞ᴥ⚟",
         "RIP Plingo and Plongo",
         "fnaf_scary.mp3",
         "Ricardo Rodriguez",
-        "On Fundus?"
+        "On Fundus?",
+        "recycelycling bin isn't on desktop",
+        "Ty im illitarite"
     ];
 
 
@@ -400,3 +399,9 @@ function indefiniteWrite() {
     });
 
 })(jQuery);
+
+function copyDiscord() {
+    navigator.clipboard.writeText('skylar#0007');
+    document.getElementById("tooltiptext").innerHTML = "copied!";
+    setTimeout(() => { document.getElementById("tooltiptext").innerHTML = "click to copy"; }, 5000);
+}
