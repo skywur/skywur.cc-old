@@ -163,7 +163,7 @@ input:focus {
 @keyframes mailglow {
     0% {}
     100% {
-        text-shadow: 0 0 5px rgb(234, 67, 53, 0.2), 0 0 10px rgb(234, 67, 53, 0.2), 0 0 25px rgb(234, 67, 53, 0.2);
+        text-shadow: 0 0 5px rgb(29, 185, 84, 0.2), 0 0 10px rgb(29, 185, 84, 0.2), 0 0 25px rgb(29, 185, 84, 0.2);
     }
 }
 
@@ -367,7 +367,7 @@ a {
 }
 
 #mail {
-    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #EA4335 100%);
+    background: linear-gradient(45deg, rgb(122, 122, 122), rgb(62, 62, 62) 25%, #1DB954 100%);
     background-size: 400% auto;
     background-clip: text;
     text-fill-color: transparent;
@@ -400,7 +400,7 @@ a {
 }
 
 #mail:hover>#mailsvg {
-    fill: #EA4335;
+    fill: #1DB954;
 }
 
 @keyframes svguwu {

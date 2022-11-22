@@ -171,7 +171,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/p
     });
 });
 // mail
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/mailFINAL.obj?v=1663265961289', function(object) {
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/spotify.obj?v=1668974528479', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -268,7 +268,7 @@ function topronouns() {
 
 function tomail() {
     handleTriggers(4);
-    morphTo(mailParticles, '0xEA4335');
+    morphTo(mailParticles, '0x1db954');
 }
 
 
@@ -354,7 +354,8 @@ function indefiniteWrite() {
         "Ricardo Rodriguez",
         "On Fundus?",
         "recycelycling bin isn't on desktop",
-        "Ty im illitarite"
+        "Ty im illitarite",
+        "she likes minors"
     ];
 
 
