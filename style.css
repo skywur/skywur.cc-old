@@ -374,8 +374,6 @@ a {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     transition: 0.3s;
-    font-size: 2vw;
-    padding-top: .3vw;
 }
 
 #mail:hover {
