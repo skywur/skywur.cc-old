@@ -341,21 +341,17 @@ function indefiniteWrite() {
         "nice to meef you",
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
-        "0707",
-        "mf ruined my 7 month :sob:",
         "I'm your worst nightmare Khalid",
         "I'm Straight - Lil Baby",
         "check your shower",
         "i'm sleeping mad as hell tonight",
-        "i @@mommy i'm",
-        "<t:1657194359:d>",
         "RIP Plingo and Plongo",
         "fnaf_scary.mp3",
         "Ricardo Rodriguez",
         "On Fundus?",
         "recycelycling bin isn't on desktop",
         "Ty im illitarite",
-        "she likes minors"
+        "she likes minors",
     ];
 
 
