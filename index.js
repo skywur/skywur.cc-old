@@ -155,7 +155,7 @@ objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/s
     });
 });
 // pronouns
-objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/pronounsFINAL.obj?v=1663215905323', function(object) {
+objLoader.load('https://cdn.glitch.global/f630c6b7-9fae-41f5-b0b8-620665c52345/discordFINAL.obj?v=1663215088026', function(object) {
     object.traverse(function(child) {
         if (child instanceof THREE.Mesh) {
             let scale = 2.5;
@@ -333,8 +333,6 @@ function indefiniteWrite() {
         "real perc gamer",
         "Wat you looo like #",
         "jojo mcdodd x reader",
-        "ring doorbell anime girl meme",
-        "yall fuckin to iann dior ;w;",
         "are king von and polo g friends?",
         "ggwp trans rights uwu",
         "go play valorant you tran",
