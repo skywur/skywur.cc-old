@@ -331,8 +331,6 @@ function indefiniteWrite() {
         "yacht oath umbrella race eagle animal fade adhere guide gallop oval train",
         "my room is a chokepoint",
         "real perc gamer",
-        "Wat you looo like #",
-        "jojo mcdodd x reader",
         "are king von and polo g friends?",
         "ggwp trans rights uwu",
         "go play valorant you tran",
@@ -340,17 +338,13 @@ function indefiniteWrite() {
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
         "I'm your worst nightmare Khalid",
-        "I'm Straight - Lil Baby",
         "check your shower",
         "i'm sleeping mad as hell tonight",
-        "RIP Plingo and Plongo",
         "fnaf_scary.mp3",
-        "Ricardo Rodriguez",
         "On Fundus?",
-        "recycelycling bin isn't on desktop",
-        "Ty im illitarite",
         "she likes minors",
-        "0707 forever still",
+        "nnnghh im gonna pre",
+        "0707 forever still"
     ];
 
 
@@ -375,7 +369,6 @@ function indefiniteWrite() {
 (function($) {
 
     $(window).on('load', function() {
-        console.log("everything loaded");
 
         const wrapper = document.getElementById("wrapper");
         wrapper.style.opacity = "0";
@@ -386,7 +379,6 @@ function indefiniteWrite() {
     // and/or
 
     $(document).ready(function() {
-        console.log("dom loaded");
     });
 
 })(jQuery);
