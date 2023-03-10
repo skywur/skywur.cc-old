@@ -61,6 +61,12 @@ body {
     display: inline-block;
 }
 
+#hits {
+    position:absolute;
+    right:0;
+    
+}
+
 #closerTag {
     position: absolute;
     bottom: 2vw;
