@@ -344,8 +344,7 @@ function indefiniteWrite() {
         "On Fundus?",
         "she likes minors",
         "nnnghh im gonna pre",
-        "0707 forever still",
-        "beep beep beep",
+        "'0707 forever' sure lmao",
     ];
 
 
