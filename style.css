@@ -279,12 +279,11 @@ a {
 }
 
 #tagcontainer {
+    padding-left: 1vw;
     display: flex;
     flex-wrap: nowrap;
-    margin: 0%;
     position: absolute;
     top: 10vw;
-    left: 2vw;
 }
 
 #tagcontainer>h3 {
