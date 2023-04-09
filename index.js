@@ -388,3 +388,38 @@ function copyDiscord() {
     document.getElementById("tooltiptext").innerHTML = "copied!";
     setTimeout(() => { document.getElementById("tooltiptext").innerHTML = "click to copy"; }, 5000);
 }
+
+ // Set your Last.fm username and API key
+ const lastfmUsername = 'skywurowo';
+ const lastfmApiKey = 'c163515529978da722daa7fb4094121e';
+
+ // Retrieve your current Spotify activity from Last.fm
+ $.getJSON(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${lastfmUsername}&api_key=${lastfmApiKey}&format=json&limit=1`, data => {
+   const track = data.recenttracks.track[0];
+
+   // Check if you're currently listening to a Spotify track
+   if (track) {
+     const artist = track.artist['#text'];
+     const title = track.name;
+     const url = track.url;
+     const image = track.image[3]['#text'];
+     const container = document.getElementsByClassName('nowPlayingContainer')[0]
+     console.log(track);
+     console.log(`now listening to ${title} by ${artist}`);
+
+     // Create the Spotify activity embed
+     const embed = `
+     <div class="nowPlayingBox">
+        <div id="trackArtwork"><a href="${url}"><img src="${image}"></a></div>
+        <div class="trackInfo">
+            <p id="trackName"><a href="${url}">${title}</a></p>
+            <div id="artist"><a href="${url}">${artist}</a></div>
+        </div>
+    </div>
+     `;
+
+     // Add the embed to the page
+     $('#nowPlayingContainer').html(embed);
+     $('.nowPlayingBox').css("backgroundImage", "url('" + image + "')");
+   }
+ });
