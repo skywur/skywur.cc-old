@@ -389,22 +389,23 @@ function copyDiscord() {
    const track = data.recenttracks.track[0];
 
    if (track) {
-     const artist = track.artist['#text'];
-     const title = track.name;
-     const url = track.url;
-     const image = track.image[3]['#text'];
-     console.log(`now listening to ${title} by ${artist}`);
+    const artist = track.artist['#text'];
+    const title = track.name;
+    const url = track.url;
+    const image = track.image[3]['#text'];
+    console.log(`now listening to ${title} by ${artist}`);
 
-     // Create the Spotify activity embed
-     const embed = `
-     <div class="nowPlayingBox">
-        <div id="trackArtwork"><a href="${url}"><img src="${image}"></a></div>
-        <div class="trackInfo">
-            <p id="trackName"><a href="${url}">${title}</a></p>
-            <div id="artist"><a href="${url}">${artist}</a></div>
-            <img class="spotifyLogo" src="spotify.png">
+    // Create the Spotify activity embed
+    const embed = `
+    <div class="nowPlayingBox">
+        <div class="playingContent">
+            <div id="trackArtwork"><a href="${url}"><img src="${image}"></a></div>
+            <div class="trackInfo">
+                <p id="trackName"><a href="${url}">${title}</a></p>
+                <div id="artist"><a href="${url}">${artist}</a></div>
+                <a href="${url}"><img class="spotifyLogo" src="spotify.png"></a>
+            </div>
         </div>
-        
     </div>
      `;
 

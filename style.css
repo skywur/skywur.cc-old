@@ -633,17 +633,15 @@ ul.contextMenu{
     background-position: center;
 }
 
-.nowPlayingBox::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: radial-gradient(ellipse at top left, rgba(57, 57, 57, 0.3) 25%, rgb(25, 20, 20, 0.5) 75%);
+.playingContent {
+    position: relative;
+    min-width:400px;
+    height: 120px;
+    display: flex;
+    background: radial-gradient(ellipse at top left, rgba(57, 57, 57, 0.3) 25%, rgba(243, 51, 243, 0.115) 75%);
     border-radius: 25px;
     backdrop-filter: saturate(200%) blur(20px);
 }
-
 #trackArtwork a img {
     position: relative;
     padding: 10px;
@@ -654,10 +652,9 @@ ul.contextMenu{
 }
 
 .trackInfo {
-    position: relative;
-    display: block;
     z-index: 2;
     width: 45%;
+    padding-right: 10px;
 }
 
 #trackName a {
