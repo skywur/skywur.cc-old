@@ -331,19 +331,12 @@ function indefiniteWrite() {
         "yacht oath umbrella race eagle animal fade adhere guide gallop oval train",
         "my room is a chokepoint",
         "real perc gamer",
-        "are king von and polo g friends?",
         "ggwp trans rights uwu",
         "go play valorant you tran",
         "nice to meef you",
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
-        "I'm your worst nightmare Khalid",
-        "check your shower",
-        "i'm sleeping mad as hell tonight",
         "fnaf_scary.mp3",
-        "On Fundus?",
-        "she likes minors",
-        "nnnghh im gonna pre",
         "'0707 forever' sure lmao",
     ];
 
@@ -389,22 +382,17 @@ function copyDiscord() {
     setTimeout(() => { document.getElementById("tooltiptext").innerHTML = "click to copy"; }, 5000);
 }
 
- // Set your Last.fm username and API key
  const lastfmUsername = 'skywurowo';
  const lastfmApiKey = 'c163515529978da722daa7fb4094121e';
 
- // Retrieve your current Spotify activity from Last.fm
  $.getJSON(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${lastfmUsername}&api_key=${lastfmApiKey}&format=json&limit=1`, data => {
    const track = data.recenttracks.track[0];
 
-   // Check if you're currently listening to a Spotify track
    if (track) {
      const artist = track.artist['#text'];
      const title = track.name;
      const url = track.url;
      const image = track.image[3]['#text'];
-     const container = document.getElementsByClassName('nowPlayingContainer')[0]
-     console.log(track);
      console.log(`now listening to ${title} by ${artist}`);
 
      // Create the Spotify activity embed
@@ -414,7 +402,9 @@ function copyDiscord() {
         <div class="trackInfo">
             <p id="trackName"><a href="${url}">${title}</a></p>
             <div id="artist"><a href="${url}">${artist}</a></div>
+            <img class="spotifyLogo" src="spotify.png">
         </div>
+        
     </div>
      `;
 
