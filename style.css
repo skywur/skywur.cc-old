@@ -497,11 +497,16 @@ canvas:nth-of-type(2) {
 .spinner>div {
     width: 30px;
     height: 30px;
-    background-color: rgb(255, 255, 255);
     border-radius: 100%;
     display: inline-block;
     -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
     animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner>div:before { 
+    content: '❤';
+    color: white;
+    font-size: 30px;
 }
 
 .spinner .bounce1 {
