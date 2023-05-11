@@ -337,6 +337,7 @@ function indefiniteWrite() {
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
         "fnaf_scary.mp3",
+        "'0707 forever' sure lmao",
     ];
 
 
@@ -358,22 +359,6 @@ function indefiniteWrite() {
     }).start();
 }
 
-(function($) {
-
-    $(window).on('load', function() {
-
-        const wrapper = document.getElementById("wrapper");
-        wrapper.style.opacity = "0";
-        wrapper.addEventListener('transitionend', () => wrapper.remove());
-
-    });
-
-    // and/or
-
-    $(document).ready(function() {
-    });
-
-})(jQuery);
 
 function copyDiscord() {
     navigator.clipboard.writeText('skylar#0007');
@@ -413,3 +398,4 @@ function copyDiscord() {
      $('.nowPlayingBox').css("backgroundImage", "url('" + image + "')");
    }
  });
+
