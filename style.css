@@ -300,7 +300,7 @@ a {
 
 .desc {
     font-family: 'Readex Pro', sans-serif;
-    font-size: clamp(30px, 2.5vw, 5vw);
+    font-size: clamp(30px, 2.5vw, 100px);
     position: absolute;
     top: 12vw;
     padding: 2vw;
@@ -421,8 +421,8 @@ a {
 svg {
     position: absolute;
     left: -15%;
-    height: 15%;
-    width: 15%;
+    height: clamp(10px, 15%, 100px);
+    width: clamp(10px, 15%, 100px);
     fill: rgb(99, 99, 99);
     transition: 0.3s fill;
 }
@@ -480,6 +480,11 @@ canvas:nth-of-type(2) {
     }
     canvas {
         transform: scale(50%);
+    }
+    svg {
+        height: 15%;
+        width: 15%;
+    
     }
 }
 
@@ -856,4 +861,27 @@ ul.contextMenu{
 }
 #projects .project .tags .tag[data-type=api] {
     background: #542766;
+}
+
+.warning {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: rgb(153, 143, 143);
+    text-align: center;
+    z-index: 1000;
+    padding: 10px;
+}
+
+.close-button {
+    font-family: 'Quicksand', sans-serif;
+    position: absolute;
+    top: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgb(153, 143, 143);
 }

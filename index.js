@@ -399,3 +399,22 @@ function copyDiscord() {
    }
  });
 
+// Check if WebGL is enabled
+if (window.WebGLRenderingContext) {
+    // If not, display a div with a warning message
+    const warningDiv = document.createElement('div');
+    warningDiv.textContent = 'This site is best viewed with hardware acceleration enabled';
+    warningDiv.classList.add('warning');
+    document.body.appendChild(warningDiv);
+
+    // Add a close button to the warning div
+    const closeButton = document.createElement('button');
+    closeButton.textContent = 'X';
+    closeButton.classList.add('close-button');
+    warningDiv.appendChild(closeButton);
+
+    // Add event listener to close button
+    closeButton.addEventListener('click', () => {
+        warningDiv.style.display = 'none';
+    });
+}
