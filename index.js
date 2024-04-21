@@ -337,6 +337,7 @@ function indefiniteWrite() {
         "my name is mearty and i'm transphobic",
         "skylar is stupid",
         "fnaf_scary.mp3",
+        "'0707 forever' sure lmao",
     ];
 
 
