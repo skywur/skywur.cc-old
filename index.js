@@ -330,14 +330,9 @@ function indefiniteWrite() {
     let strs = [
         "yacht oath umbrella race eagle animal fade adhere guide gallop oval train",
         "my room is a chokepoint",
-        "real perc gamer",
-        "ggwp trans rights uwu",
         "go play valorant you tran",
-        "nice to meef you",
-        "my name is mearty and i'm transphobic",
         "skylar is stupid",
-        "fnaf_scary.mp3",
-        "'0707 forever' sure lmao",
+        "you = onika ate = burgers",
     ];
 
 
