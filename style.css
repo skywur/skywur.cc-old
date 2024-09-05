@@ -847,6 +847,12 @@ ul.contextMenu{
 #projects .project .tags .tag[data-type=react] {
     background: #3a8397;
 }
+#projects .project .tags .tag[data-type=node] {
+    background: #408942;
+}
+#projects .project .tags .tag[data-type=sqlite] {
+    background: #0f80cc;
+}
 #projects .project .tags .tag[data-type=last] {
     background: #dc1a22;
 }
