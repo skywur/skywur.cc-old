@@ -13,7 +13,7 @@ const particleImage = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/605067/parti
     particleSize = .1;
 
 const defaultAnimationSpeed = 1,
-    morphAnimationSpeed = 1;
+morphAnimationSpeed = 1;
 
 // Triggers
 const triggers = document.getElementsByClassName('triggers')[0].querySelectorAll('span')
@@ -328,22 +328,19 @@ function getRandomInt(max) {
 
 function indefiniteWrite() {
     let strs = [
-        "yacht oath umbrella race eagle animal fade adhere guide gallop oval train",
-        "my room is a chokepoint",
-        "go play valorant you tran",
-        "skylar is stupid",
-        "you = onika ate = burgers",
+        ":3",
+        "c:",
+        ">:3",
+        ":3c",
+        "@_@",
+        ":p",
+        "^w^",
+        "^-^",
     ];
 
-
     var num = getRandomInt(strs.length);
-
-    let quote = '"' + strs[num] + '"';
-
-    console.log("writing " + quote + " (" + num + ")");
-
+    let quote = strs[num];
     var typElement = document.getElementById('quotes');
-
     var typewriter = new Typewriter(quotes, {
         loop: true
     });
@@ -362,7 +359,7 @@ function copyDiscord() {
 }
 
  const lastfmUsername = 'skywurowo';
- const lastfmApiKey = 'c163515529978da722daa7fb4094121e';
+ const lastfmApiKey = 'c163515529978da722daa7fb4094121e'; // dont mess with my lastfm <3
 
  $.getJSON(`https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=${lastfmUsername}&api_key=${lastfmApiKey}&format=json&limit=1`, data => {
    const track = data.recenttracks.track[0];
@@ -395,7 +392,7 @@ function copyDiscord() {
  });
 
 // Check if WebGL is enabled
-if (window.WebGLRenderingContext) {
+if (!window.WebGLRenderingContext) {
     // If not, display a div with a warning message
     const warningDiv = document.createElement('div');
     warningDiv.textContent = 'This site is best viewed with hardware acceleration enabled';

@@ -457,11 +457,11 @@ canvas:nth-of-type(2) {
 @media screen and (max-width: 900px) {
     .logo {
         font-size: 10vw;
-        left: 4vw;
+        left: 25%;
     }
     #tagcontainer {
         top: 17vw;
-        left: 4vw;
+        left: 22%;
     }
     #tagcontainer>h3 {
         font-size: 2.5vw;
@@ -473,18 +473,30 @@ canvas:nth-of-type(2) {
     .desc {
         top: 25vw;
         font-size: clamp(30px, 5vw, 5vw);
-        left: 8vw;
+        left: 14vw;
+    }
+    .desc span {
+        font-size: 10vw;
+    }
+    #quotesouter {
+        display:none;
     }
     .devtext {
         font-size: 3vw;
     }
     canvas {
-        transform: scale(50%);
+        display:none;
     }
     svg {
         height: 15%;
         width: 15%;
     
+    }
+    .nav {
+        bottom: 3vw !important;
+    }
+    #closerTag {
+        font-size: 25px;
     }
 }
 
